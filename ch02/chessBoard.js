@@ -1,21 +1,12 @@
-
-console.info(generateChessBoard(16));
+console.info(generateChessBoard(128));
 
 function generateChessBoard(n){
-    return spread(n).map(function(element, index){
-        return generateSquares(n, index % 2);
+    return Array.apply(null, {length : n}).map(function(element, index){
+        return generateNSquares(n, index % 2);
     }).join('\n');
 }
 
-function spread(n){
-    var a = [];
-    for (var index = 1; index <= n; index++) {
-        a.push(index);        
-    }
-    return a;
-}
-
-function generateSquares(n, even){   
+function generateNSquares(n, even){   
     if(even){
         return Array(n/2).join('# ');
     } else {
