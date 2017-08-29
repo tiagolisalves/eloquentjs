@@ -7,10 +7,10 @@ function loopingTriangle(n){
             }).join('\n');
 }
 
-//Diferent functional options for get ranges for 1 to n
+//Diferent functional options for get ranges from 1 to n
 
 function rangeFromKeys(n){
-    return  Array.from(Array(7).keys())
+    return  Array.from(Array(n).keys())
             .map(function(i){
                 return i + 1;
             });            
