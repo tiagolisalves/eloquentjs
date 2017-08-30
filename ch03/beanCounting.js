@@ -1,11 +1,24 @@
 function countBs(text){    
-    return text.split('').reduce(function(acc, char){
-        if(char == 'B'){
-            return acc + 1;
-        } else {
-            return acc;
-        }
-    }, 0);
+    return text.split('')
+        .filter(function(char){
+            return char === 'B';
+        })    
+        .reduce(function(acc){       
+            return acc + 1;        
+        }, 0);
 }
 
-console.log(countBs("o texto está BB BB repleto de Bs"));
+function countChar(text, charSelected){    
+    return text.split('')
+        .filter(function(char){
+            return char === charSelected;
+        })    
+        .reduce(function(acc){       
+            return acc + 1;        
+        }, 0);
+}
+
+
+
+console.log(countBs("BBC"));
+console.log(countChar("kakkerlak", "k"));
