@@ -7,7 +7,7 @@ var byName = ancestry.reduce(function(byName, person){
 }, {});
 
 function ageDifferenceFromMother(child){
-  var mother = byName[child.mother] || {};  //short-circuit operator to sinalize that mother was not found;
+  var mother = byName[child.mother] || {};  //short-circuit evaluation to get mother or an empty object if mother wasn't found;
   return child.born - mother.born;
 }
 
